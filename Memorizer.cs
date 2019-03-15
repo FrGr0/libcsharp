@@ -1,9 +1,18 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+/* 
+    permet de stocker en mémoire la valeur contenue dans chaque champ lors de la validation d'un formulaire
+    pour pouvoir la rappeler sur le même formulaire vierge avec un raccourci clavier. conserve jusqu'a 2000 validations
+    derniere entrée : première appelée par le raccourci
+    appeler 2x le raccourci remonte a l'avant derniere donnée validée
+            3x                          antépénultième
+            etc                         n--
+*/
 
 namespace Memorizer
 {
