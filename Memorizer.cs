@@ -6,12 +6,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /* 
-    permet de stocker en mémoire la valeur contenue dans chaque champ lors de la validation d'un formulaire
+    permet de stocker en mémoire la valeur contenue dans chaque champ lors de la validation d'un formulaire :
+    
+    private Memorizer.Memorizer Memo = new Memorizer.Memorizer();
+    
+    Memo.set((Control)sender) en methode Control_Leave
+    Memo.SetAll(this) en methode Button_Click (ou autre forme de validation)
+    
     pour pouvoir la rappeler sur le même formulaire vierge avec un raccourci clavier. conserve jusqu'a 2000 validations
     derniere entrée : première appelée par le raccourci
     appeler 2x le raccourci remonte a l'avant derniere donnée validée
             3x                          antépénultième
             etc                         n--
+            
+    private void Memo_KeyUp(object sender, KeyEventArgs e)
+    {
+        if (e.KeyData == Keys.F12)
+        {
+            Memo.Get((Control)sender);
+        }
+    } 
 */
 
 namespace Memorizer
